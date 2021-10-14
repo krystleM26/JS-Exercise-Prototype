@@ -94,21 +94,26 @@ Car.prototype.fillGallons = function(){
         + Should return a string "Playing with x", x being the favorite toy.
 */
 function Baby(name, age, favoriteToy) {
- Person.call(this, name, age, []);
- this.favoriteToy = favoriteToy;
+ Person.call(this);
  
+ this.favoriteToy = favoriteToy;
+this.play = function (){
+  return `Playing with ${favoriteToy}`;
 }
-Baby.prototype.play= function(){
-  return `Playing with ${this.favoriteToy}`;
+}
+Baby.prototype.play = function(){
+  this.play;
 }
 
+
+Baby.prototype = Object.create(Person.prototype);
 
 
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. Window/Global Object Binding 
-  2. Implicit Binding
+  1. Window/Global Object Binding -is used when 'this' keyword lacks context
+  2. Implicit Binding -
   3. New Binding
   4. Explicit Binding
 */
